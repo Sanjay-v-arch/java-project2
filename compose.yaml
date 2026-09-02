@@ -1,0 +1,22 @@
+services:
+  java-app:
+    image: java-project2:2.1
+    container_name: java-compose-app
+    ports:
+      - "8083:8081"
+    depends_on:
+      nginx:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV}
+      APP_VERSION: ${APP_VERSION}
+
+
+  nginx:
+    image: nginx
+    container_name: nginx-compose
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
