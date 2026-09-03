@@ -12,6 +12,6 @@ class HelloControllerTest {
 
         String result = controller.hello();
 
-        assertEquals("Hello from Project 2 - Jenkins CI!", result);
+        assertEquals("Hello from Project 2 - Jenkins CI/CD!", result);
     }
 }
