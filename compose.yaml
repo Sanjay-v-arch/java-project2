@@ -1,7 +1,6 @@
 services:
   java-app:
     image: java-project2:${BUILD_NUMBER}
-    container_name: java-compose-app
     ports:
       - "8083:8081"
     depends_on:
@@ -14,7 +13,6 @@ services:
 
   nginx:
     image: nginx
-    container_name: nginx-compose
     healthcheck:
       test: ["CMD-SHELL", "nginx -t || exit 1"]
       interval: 10s
