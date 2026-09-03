@@ -1,6 +1,6 @@
 services:
   java-app:
-    image: java-project2:2.1
+    image: java-project2:${BUILD_NUMBER}
     container_name: java-compose-app
     ports:
       - "8083:8081"
